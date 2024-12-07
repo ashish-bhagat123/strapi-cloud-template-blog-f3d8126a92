@@ -1,14 +1,15 @@
 {
-  "name": "wizr-strapi-cms",
-  "private": true,
+  "name": "my-app-name",
   "version": "0.1.0",
+  "private": true,
   "description": "A Strapi application",
   "scripts": {
-    "develop": "strapi develop",
-    "start": "strapi start",
     "build": "strapi build",
-    "strapi": "strapi",
-    "deploy": "strapi deploy"
+    "deploy": "strapi deploy",
+    "develop": "strapi develop",
+    "seed:example": "node ./scripts/seed.js",
+    "start": "strapi start",
+    "strapi": "strapi"
   },
   "dependencies": {
     "@strapi/plugin-cloud": "4.25.10",
