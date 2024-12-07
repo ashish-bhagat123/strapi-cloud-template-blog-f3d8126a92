@@ -39,37 +39,12 @@ export interface SharedRichText extends Schema.Component {
   };
 }
 
-export interface SharedQuote extends Schema.Component {
-  collectionName: 'components_shared_quotes';
-  info: {
-    displayName: 'Quote';
-    icon: 'indent';
-  };
-  attributes: {
-    title: Attribute.String;
-    body: Attribute.Text;
-  };
-}
-
-export interface SharedMedia extends Schema.Component {
-  collectionName: 'components_shared_media';
-  info: {
-    displayName: 'Media';
-    icon: 'file-video';
-  };
-  attributes: {
-    file: Attribute.Media<'images' | 'files' | 'videos'>;
-  };
-}
-
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
-      'shared.quote': SharedQuote;
-      'shared.media': SharedMedia;
     }
   }
 }

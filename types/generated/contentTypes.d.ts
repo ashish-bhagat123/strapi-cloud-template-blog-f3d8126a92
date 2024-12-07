@@ -788,72 +788,6 @@ export interface PluginUsersPermissionsUser extends Schema.CollectionType {
   };
 }
 
-export interface ApiAboutAbout extends Schema.SingleType {
-  collectionName: 'abouts';
-  info: {
-    singularName: 'about';
-    pluralName: 'abouts';
-    displayName: 'About';
-    description: 'Write about yourself and the content you create';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    title: Attribute.String;
-    blocks: Attribute.DynamicZone<
-      ['shared.media', 'shared.quote', 'shared.rich-text', 'shared.slider']
-    >;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::about.about',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::about.about',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
-export interface ApiGlobalGlobal extends Schema.SingleType {
-  collectionName: 'globals';
-  info: {
-    singularName: 'global';
-    pluralName: 'globals';
-    displayName: 'Global';
-    description: 'Define global settings';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
-    siteName: Attribute.String & Attribute.Required;
-    favicon: Attribute.Media<'images' | 'files' | 'videos'>;
-    siteDescription: Attribute.Text & Attribute.Required;
-    defaultSeo: Attribute.Component<'shared.seo'>;
-    createdAt: Attribute.DateTime;
-    updatedAt: Attribute.DateTime;
-    createdBy: Attribute.Relation<
-      'api::global.global',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-    updatedBy: Attribute.Relation<
-      'api::global.global',
-      'oneToOne',
-      'admin::user'
-    > &
-      Attribute.Private;
-  };
-}
-
 export interface ApiHindiInsightHindiInsight extends Schema.CollectionType {
   collectionName: 'hindi_insights';
   info: {
@@ -1222,8 +1156,6 @@ declare module '@strapi/types' {
       'plugin::users-permissions.permission': PluginUsersPermissionsPermission;
       'plugin::users-permissions.role': PluginUsersPermissionsRole;
       'plugin::users-permissions.user': PluginUsersPermissionsUser;
-      'api::about.about': ApiAboutAbout;
-      'api::global.global': ApiGlobalGlobal;
       'api::hindi-insight.hindi-insight': ApiHindiInsightHindiInsight;
       'api::insight.insight': ApiInsightInsight;
       'api::learner.learner': ApiLearnerLearner;
