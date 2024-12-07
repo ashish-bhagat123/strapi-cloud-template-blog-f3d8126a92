@@ -9,8 +9,10 @@ Icon
 .Spotlight-V100
 .Trashes
 ._*
-
-
+test.json
+mapper.js
+skills.json
+hindi.json
 ############################
 # Linux
 ############################
@@ -82,8 +84,6 @@ ssl
 nbproject
 public/uploads/*
 !public/uploads/.gitkeep
-.tsbuildinfo
-.eslintcache
 
 ############################
 # Node.js
@@ -96,20 +96,6 @@ logs
 results
 node_modules
 .node_history
-
-############################
-# Package managers
-############################
-
-.yarn/*
-!.yarn/cache
-!.yarn/unplugged
-!.yarn/patches
-!.yarn/releases
-!.yarn/sdks
-!.yarn/versions
-.pnp.*
-yarn-error.log
 
 ############################
 # Tests
