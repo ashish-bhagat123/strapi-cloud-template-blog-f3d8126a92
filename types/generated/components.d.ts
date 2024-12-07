@@ -1,17 +1,5 @@
 import type { Schema, Attribute } from '@strapi/strapi';
 
-export interface SharedSlider extends Schema.Component {
-  collectionName: 'components_shared_sliders';
-  info: {
-    displayName: 'Slider';
-    icon: 'address-book';
-    description: '';
-  };
-  attributes: {
-    files: Attribute.Media<'images', true>;
-  };
-}
-
 export interface SharedSeo extends Schema.Component {
   collectionName: 'components_shared_seos';
   info: {
@@ -42,7 +30,6 @@ export interface SharedRichText extends Schema.Component {
 declare module '@strapi/types' {
   export module Shared {
     export interface Components {
-      'shared.slider': SharedSlider;
       'shared.seo': SharedSeo;
       'shared.rich-text': SharedRichText;
     }
